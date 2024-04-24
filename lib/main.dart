@@ -1,4 +1,4 @@
-import 'package:imprime_mas/screens/navigation.dart';
+import 'package:imprime_mas/presentacion/home/navigation.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 void main() => runApp(const MyApp());
