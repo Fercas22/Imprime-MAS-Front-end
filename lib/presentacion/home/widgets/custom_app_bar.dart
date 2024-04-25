@@ -3,22 +3,11 @@ import 'package:fluent_ui/fluent_ui.dart';
 class CustomAppBar {
   NavigationAppBar navigationAppBar(BuildContext context, DateTime dateTime) {
     return NavigationAppBar(
-      height: 100,
-      backgroundColor: const Color(0xFFB3B3B3),
-      leading: Container(
-        // width: 100,
-        color: Colors.blue,
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Image(
-          image: AssetImage('assets/logotipo_imprime_mas.png'),
-          width: 61,
-          height: 61,
-          fit: BoxFit.cover,
-        ),
-      ),
+      automaticallyImplyLeading: false,
       actions: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             _clock(dateTime),
             const SizedBox(width: 16),
