@@ -13,7 +13,7 @@ class _RecordViewState extends State<RecordView> {
   Widget build(BuildContext context) {
     return ScaffoldPage(
       header: const PageHeader(
-        title: Text('Historial'),
+        title: Text('Historial de ventas'),
       ),
       content: SizedBox(
         height: double.infinity,

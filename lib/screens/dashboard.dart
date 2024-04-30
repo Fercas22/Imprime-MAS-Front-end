@@ -1,3 +1,4 @@
+import 'package:window_manager/window_manager.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 class Dashboard extends StatefulWidget {
@@ -25,7 +26,7 @@ class _DashboardState extends State<Dashboard> {
           children: [
             const SizedBox(height: 15),
             Checkbox(
-              content: const Text('Check Box'),
+              content: const Text('FulL Screen'),
               checked: _checked,
               onChanged: (value) {
                 setState(() {

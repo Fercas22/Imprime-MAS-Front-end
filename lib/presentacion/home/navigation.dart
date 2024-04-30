@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:imprime_mas/presentacion/config/config.dart';
 import 'package:imprime_mas/presentacion/customer/customer.dart';
-import 'package:imprime_mas/presentacion/home/widgets/custom_app_bar.dart';
+import 'package:imprime_mas/presentacion/home/widgets/custom_header.dart';
 import 'package:imprime_mas/presentacion/product/product.dart';
 import 'package:imprime_mas/presentacion/profile/profile.dart';
 import 'package:imprime_mas/presentacion/record/record.dart';
@@ -22,16 +22,18 @@ class _NavigationState extends State<Navigation> {
   int _currentIndex = 0;
   late Timer _timer;
   DateTime dateTime = DateTime.now();
-  PaneDisplayMode displayMode = PaneDisplayMode.auto;
 
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        dateTime = DateTime.now();
-      });
-    });
+    _timer = Timer.periodic(
+      const Duration(seconds: 1),
+      (timer) {
+        setState(() {
+          dateTime = DateTime.now();
+        });
+      },
+    );
   }
 
   @override
@@ -43,16 +45,16 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return NavigationView(
-      appBar: CustomAppBar().navigationAppBar(context, dateTime),
       pane: NavigationPane(
+        header: CustomHeader(dateTime: dateTime),
         selected: _currentIndex,
-        size: const NavigationPaneSize(openWidth: 200),
+        size: const NavigationPaneSize(openWidth: 324),
         onChanged: (value) {
           setState(() {
             _currentIndex = value;
           });
         },
-        displayMode: displayMode,
+        displayMode: PaneDisplayMode.auto,
         items: _items,
         footerItems: _footerItems,
       ),
@@ -62,40 +64,95 @@ class _NavigationState extends State<Navigation> {
   List<NavigationPaneItem> get _items {
     return [
       PaneItem(
-        icon: const Icon(FluentIcons.home),
-        title: const Text('Punto de venta'),
+        icon: const Icon(
+          FluentIcons.home,
+          size: 22,
+        ),
+        title: const Text(
+          'Punto de venta',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
         body: const Dashboard(),
       ),
       PaneItemSeparator(),
       PaneItem(
-        icon: const Icon(FluentIcons.product_catalog),
-        title: const Text('Productos'),
+        icon: const Icon(
+          FluentIcons.product_catalog,
+          size: 22,
+        ),
+        title: const Text(
+          'Productos e inventario',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
         body: const ProductView(),
       ),
       PaneItem(
-        icon: const Icon(FluentIcons.customer_assets),
-        title: const Text('Clientes'),
+        icon: const Icon(
+          FluentIcons.customer_assets,
+          size: 22,
+        ),
+        title: const Text(
+          'Clientes',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
         body: const CustomerView(),
       ),
       PaneItem(
-        icon: const Icon(FluentIcons.provisioning_package),
-        title: const Text('Proveedores'),
+        icon: const Icon(
+          FluentIcons.provisioning_package,
+          size: 22,
+        ),
+        title: const Text(
+          'Proveedores',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
         body: const SupplierView(),
       ),
       PaneItem(
-        icon: const Icon(FluentIcons.calendar),
-        title: const Text('Historial'),
-        body: const RecordView(),
-      ),
-      PaneItem(
-        icon: const Icon(FluentIcons.user_optional),
-        title: const Text('Usuarios'),
+        icon: const Icon(
+          FluentIcons.user_optional,
+          size: 22,
+        ),
+        title: const Text(
+          'Usuarios y cajeros',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
         body: const UserView(),
       ),
       PaneItem(
-        icon: const Icon(FluentIcons.profile_search),
-        title: const Text('Perfil'),
-        body: const ProfileView(),
+        icon: const Icon(
+          FluentIcons.calendar,
+          size: 22,
+        ),
+        title: const Text(
+          'Historial de ventas',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const RecordView(),
       ),
     ];
   }
@@ -105,67 +162,49 @@ class _NavigationState extends State<Navigation> {
   List<NavigationPaneItem> get _footerItems {
     return [
       PaneItem(
-        icon: const Icon(FluentIcons.settings),
-        title: const Text('Settings'),
+        icon: const Icon(
+          FluentIcons.profile_search,
+          size: 22,
+        ),
+        title: const Text(
+          'Perfil de usuario',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const ProfileView(),
+      ),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.settings,
+          size: 22,
+        ),
+        title: const Text(
+          'Configuracion',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
         body: const ConfigView(),
       ),
-      PaneItemExpander(
-        icon: const Icon(FluentIcons.account_management),
-        title: const Text('Account'),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.close_pane,
+          size: 22,
+        ),
+        title: const Text(
+          'Cerrar sesión',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
         body: const ConfigView(),
-        items: [
-          PaneItemHeader(
-            header: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 5),
-              child: Text('DisplayMode'),
-            ),
-          ),
-          PaneItemAction(
-            icon: const Icon(FluentIcons.mail),
-            title: const Text('Auto'),
-            onTap: () {
-              setState(() {
-                displayMode = PaneDisplayMode.auto;
-              });
-            },
-          ),
-          PaneItemAction(
-            icon: const Icon(FluentIcons.calendar),
-            title: const Text('Compact'),
-            onTap: () {
-              setState(() {
-                displayMode = PaneDisplayMode.compact;
-              });
-            },
-          ),
-          PaneItemAction(
-            icon: const Icon(FluentIcons.calendar),
-            title: const Text('Minimal'),
-            onTap: () {
-              setState(() {
-                displayMode = PaneDisplayMode.minimal;
-              });
-            },
-          ),
-          PaneItemAction(
-            icon: const Icon(FluentIcons.calendar),
-            title: const Text('Open'),
-            onTap: () {
-              setState(() {
-                displayMode = PaneDisplayMode.open;
-              });
-            },
-          ),
-          // PaneItemAction(
-          //   icon: const Icon(FluentIcons.calendar),
-          //   title: const Text('Top'),
-          //   onTap: () {
-          //     setState(() {
-          //       displayMode = PaneDisplayMode.top;
-          //     });
-          //   },
-          // ),
-        ],
       ),
     ];
   }

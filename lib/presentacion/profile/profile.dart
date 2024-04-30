@@ -13,7 +13,7 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return ScaffoldPage(
       header: const PageHeader(
-        title: Text('Perfil'),
+        title: Text('Perfil de usuario'),
       ),
       content: SizedBox(
         height: double.infinity,

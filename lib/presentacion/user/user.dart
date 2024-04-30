@@ -13,7 +13,7 @@ class _UserViewState extends State<UserView> {
   Widget build(BuildContext context) {
     return ScaffoldPage(
       header: const PageHeader(
-        title: Text('Usuarios'),
+        title: Text('Usuarios y cajeros'),
       ),
       content: SizedBox(
         height: double.infinity,
