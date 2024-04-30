@@ -1,4 +1,3 @@
-import 'package:window_manager/window_manager.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 class Dashboard extends StatefulWidget {

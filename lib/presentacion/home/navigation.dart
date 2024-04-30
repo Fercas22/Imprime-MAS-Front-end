@@ -81,7 +81,7 @@ class _NavigationState extends State<Navigation> {
       PaneItemSeparator(),
       PaneItem(
         icon: const Icon(
-          FluentIcons.product_catalog,
+          FluentIcons.product_release,
           size: 22,
         ),
         title: const Text(
@@ -96,7 +96,7 @@ class _NavigationState extends State<Navigation> {
       ),
       PaneItem(
         icon: const Icon(
-          FluentIcons.customer_assets,
+          FluentIcons.encounter,
           size: 22,
         ),
         title: const Text(
@@ -111,7 +111,7 @@ class _NavigationState extends State<Navigation> {
       ),
       PaneItem(
         icon: const Icon(
-          FluentIcons.provisioning_package,
+          FluentIcons.delivery_truck,
           size: 22,
         ),
         title: const Text(
@@ -126,7 +126,7 @@ class _NavigationState extends State<Navigation> {
       ),
       PaneItem(
         icon: const Icon(
-          FluentIcons.user_optional,
+          FluentIcons.account_management,
           size: 22,
         ),
         title: const Text(
