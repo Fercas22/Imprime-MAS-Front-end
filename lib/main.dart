@@ -1,4 +1,5 @@
 import 'package:imprime_mas/presentacion/home/navigation.dart';
+import 'package:imprime_mas/theme/app_theme.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
@@ -12,16 +13,33 @@ void main() async {
   // });
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isDarkMode = true;
+
+  void toggleTheme(bool isDark) {
+    setState(() {
+      isDarkMode = isDark;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return FluentApp(
       debugShowCheckedModeBanner: false,
       title: 'Imprime mas',
-      theme: FluentThemeData.dark(),
-      home: const Navigation(),
+      // theme: isDarkMode ? FluentThemeData.dark() : FluentThemeData.light(),
+      theme: ThemeClass.lightTheme,
+      home: Navigation(
+        toggleTheme: toggleTheme,
+        isDarkMode: isDarkMode,
+      ),
     );
   }
 }

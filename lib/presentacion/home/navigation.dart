@@ -2,17 +2,23 @@ import 'dart:async';
 
 import 'package:imprime_mas/presentacion/config/config.dart';
 import 'package:imprime_mas/presentacion/customer/customer.dart';
-import 'package:imprime_mas/presentacion/home/widgets/custom_header.dart';
 import 'package:imprime_mas/presentacion/product/product.dart';
 import 'package:imprime_mas/presentacion/profile/profile.dart';
 import 'package:imprime_mas/presentacion/record/record.dart';
 import 'package:imprime_mas/presentacion/supplier/supplier.dart';
 import 'package:imprime_mas/presentacion/user/user.dart';
-import 'package:imprime_mas/screens/dashboard.dart';
+import 'package:imprime_mas/presentacion/dashboard/dashboard.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+  final Function toggleTheme;
+  final bool isDarkMode;
+
+  const Navigation({
+    super.key,
+    required this.toggleTheme,
+    required this.isDarkMode,
+  });
 
   @override
   State<Navigation> createState() => _NavigationState();
@@ -46,15 +52,37 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return NavigationView(
       pane: NavigationPane(
-        header: CustomHeader(dateTime: dateTime),
+        // header: CustomHeader(dateTime: dateTime),
         selected: _currentIndex,
-        size: const NavigationPaneSize(openWidth: 324),
+        // size: const NavigationPaneSize(openWidth: 324),
         onChanged: (value) {
           setState(() {
             _currentIndex = value;
           });
         },
-        displayMode: PaneDisplayMode.auto,
+        displayMode: PaneDisplayMode.compact,
+        // items: [
+        //   PaneItem(
+        //     icon: const Icon(
+        //       FluentIcons.home,
+        //       size: 20,
+        //     ),
+        //     title: const Text(
+        //       'Punto de venta',
+        //       // maxLines: 1,
+        //       // overflow: TextOverflow.ellipsis,
+        //       style: TextStyle(
+        //         fontFamily: 'Microsoft Sans Serif',
+        //         fontSize: 16,
+        //         color: Color(0xFFFFFFFF),
+        //       ),
+        //     ),
+        //     body: Dashboard(
+        //       toggleTheme: widget.toggleTheme,
+        //       isDarkMode: widget.isDarkMode,
+        //     ),
+        //   ),
+        // ]
         items: _items,
         footerItems: _footerItems,
       ),
@@ -66,7 +94,7 @@ class _NavigationState extends State<Navigation> {
       PaneItem(
         icon: const Icon(
           FluentIcons.home,
-          size: 22,
+          size: 20,
         ),
         title: const Text(
           'Punto de venta',
@@ -96,7 +124,7 @@ class _NavigationState extends State<Navigation> {
       ),
       PaneItem(
         icon: const Icon(
-          FluentIcons.encounter,
+          FluentIcons.group,
           size: 22,
         ),
         title: const Text(
@@ -141,7 +169,7 @@ class _NavigationState extends State<Navigation> {
       ),
       PaneItem(
         icon: const Icon(
-          FluentIcons.calendar,
+          FluentIcons.history,
           size: 22,
         ),
         title: const Text(
@@ -163,7 +191,7 @@ class _NavigationState extends State<Navigation> {
     return [
       PaneItem(
         icon: const Icon(
-          FluentIcons.profile_search,
+          FluentIcons.fabric_user_folder,
           size: 22,
         ),
         title: const Text(
@@ -189,11 +217,14 @@ class _NavigationState extends State<Navigation> {
             color: Color(0xFFFFFFFF),
           ),
         ),
-        body: const ConfigView(),
+        body: ConfigView(
+          toggleTheme: widget.toggleTheme,
+          isDarkMode: widget.isDarkMode,
+        ),
       ),
       PaneItem(
         icon: const Icon(
-          FluentIcons.close_pane,
+          FluentIcons.sign_out,
           size: 22,
         ),
         title: const Text(
@@ -204,7 +235,7 @@ class _NavigationState extends State<Navigation> {
             color: Color(0xFFFFFFFF),
           ),
         ),
-        body: const ConfigView(),
+        body: const SizedBox(),
       ),
     ];
   }

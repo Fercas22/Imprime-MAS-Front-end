@@ -1,8 +1,10 @@
 import 'dart:math';
 
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
 import 'package:imprime_mas/presentacion/product/content_tab.dart';
 import 'package:imprime_mas/presentacion/widgets/custom_statistics_card.dart';
+import 'package:imprime_mas/theme/app_theme.dart';
 
 class ProductView extends StatefulWidget {
   const ProductView({super.key});
@@ -15,37 +17,30 @@ class _ProductViewState extends State<ProductView> {
   int currentIndex = 0;
   List<Tab> tabs = [
     Tab(
-        icon: const Icon(
-          FluentIcons.product_release,
-          size: 20,
-        ),
-        text: const Text(
-          'Productos',
-          style: TextStyle(
-            fontFamily: 'Microsoft Sans Serif',
-            fontSize: 16,
-            color: Color(0xFFFFFFFF),
-          ),
-        ),
-        body: const ContentTab()),
+      icon: const Icon(
+        FluentIcons.product_release,
+        size: 20,
+      ),
+      text: Text(
+        'Productos',
+        style: ThemeClass.lightTheme.typography.body,
+      ),
+      body: const ContentTab(),
+    ),
     Tab(
       icon: const Icon(
         FluentIcons.page_arrow_right,
         size: 20,
       ),
-      text: const Text(
+      text: Text(
         'Movimientos',
-        style: TextStyle(
-          fontFamily: 'Microsoft Sans Serif',
-          fontSize: 16,
-          color: Color(0xFFFFFFFF),
-        ),
+        style: ThemeClass.lightTheme.typography.body,
       ),
       body: Container(
         color:
             Colors.accentColors[Random().nextInt(Colors.accentColors.length)],
         child: const Center(
-          child: Text('Content of Tab 2'),
+          child: Text('Contenido del panel de movimientos'),
         ),
       ),
     ),
@@ -53,43 +48,38 @@ class _ProductViewState extends State<ProductView> {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldPage(
-      header: const PageHeader(
-        title: Text(
-          'Productos e Inventario',
-          style: TextStyle(
-            fontFamily: 'Microsoft Tai Le',
-            fontSize: 36,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFFFFFFFF),
+    return Container(
+      color: const Color(0xFF242424),
+      child: ScaffoldPage(
+        header: const CustomHeader(
+          title: 'Productos e Inventario',
+        ),
+        content: Padding(
+          padding: const EdgeInsets.only(
+            left: 25,
+            right: 25,
+            bottom: 15,
           ),
-        ),
-      ),
-      content: Padding(
-        padding: const EdgeInsets.only(
-          left: 25,
-          right: 25,
-          bottom: 15,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _infoCard(),
-            const SizedBox(height: 15),
-            Expanded(
-              child: SizedBox(
-                width: double.infinity,
-                height: double.infinity,
-                child: TabView(
-                  tabs: tabs,
-                  currentIndex: currentIndex,
-                  onChanged: (index) => setState(() => currentIndex = index),
-                  tabWidthBehavior: TabWidthBehavior.sizeToContent,
-                  closeButtonVisibility: CloseButtonVisibilityMode.never,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _infoCard(),
+              const SizedBox(height: 15),
+              Expanded(
+                child: SizedBox(
+                  width: double.infinity,
+                  height: double.infinity,
+                  child: TabView(
+                    tabs: tabs,
+                    currentIndex: currentIndex,
+                    onChanged: (index) => setState(() => currentIndex = index),
+                    tabWidthBehavior: TabWidthBehavior.sizeToContent,
+                    closeButtonVisibility: CloseButtonVisibilityMode.never,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
