@@ -13,7 +13,7 @@ class _SupplierViewState extends State<SupplierView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF242424),
+      // color: const Color(0xFF242424),
       child: const ScaffoldPage(
         header: CustomHeader(title: 'Proveedores'),
         content: Center(

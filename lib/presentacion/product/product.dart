@@ -23,7 +23,7 @@ class _ProductViewState extends State<ProductView> {
       ),
       text: Text(
         'Productos',
-        style: ThemeClass.lightTheme.typography.body,
+        // style: ThemeClass.lightTheme.typography.body,
       ),
       body: const ContentTab(),
     ),
@@ -34,7 +34,7 @@ class _ProductViewState extends State<ProductView> {
       ),
       text: Text(
         'Movimientos',
-        style: ThemeClass.lightTheme.typography.body,
+        // style: ThemeClass.lightTheme.typography.body,
       ),
       body: Container(
         color:
@@ -49,7 +49,7 @@ class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF242424),
+      // color: const Color(0xFF242424),
       child: ScaffoldPage(
         header: const CustomHeader(
           title: 'Productos e Inventario',

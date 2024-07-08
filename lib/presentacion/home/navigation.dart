@@ -9,6 +9,7 @@ import 'package:imprime_mas/presentacion/supplier/supplier.dart';
 import 'package:imprime_mas/presentacion/user/user.dart';
 import 'package:imprime_mas/presentacion/dashboard/dashboard.dart';
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:imprime_mas/screens/clientes.dart';
 
 class Navigation extends StatefulWidget {
   final Function toggleTheme;
@@ -235,7 +236,7 @@ class _NavigationState extends State<Navigation> {
             color: Color(0xFFFFFFFF),
           ),
         ),
-        body: const SizedBox(),
+        body: const Clintes(),
       ),
     ];
   }

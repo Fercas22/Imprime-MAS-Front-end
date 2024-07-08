@@ -49,7 +49,7 @@ class _CustomHeaderState extends State<CustomHeader> {
   Text _titleText() {
     return Text(
       widget.title,
-      style: ThemeClass.lightTheme.typography.titleLarge,
+      // style: ThemeClass.typography.titleLarge,
     );
   }
 
@@ -61,7 +61,7 @@ class _CustomHeaderState extends State<CustomHeader> {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: Color.fromARGB(255, 56, 54, 54),
+        // color: Color.fromARGB(255, 56, 54, 54),
       ),
       child: _watchBody(),
     );
@@ -88,7 +88,7 @@ class _CustomHeaderState extends State<CustomHeader> {
         scrollDirection: Axis.horizontal,
         child: Text(
           '$hour : $minutes : $seconds',
-          style: ThemeClass.lightTheme.typography.body,
+          // style: ThemeClass.lightTheme.typography.body,
         ),
       ),
     );
