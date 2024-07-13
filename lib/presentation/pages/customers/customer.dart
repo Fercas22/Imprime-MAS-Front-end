@@ -1,14 +1,14 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
+import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 
-class CustomerView extends StatefulWidget {
-  const CustomerView({super.key});
+class Customer extends StatefulWidget {
+  const Customer({super.key});
 
   @override
-  State<CustomerView> createState() => _CustomerViewState();
+  State<Customer> createState() => _CustomerState();
 }
 
-class _CustomerViewState extends State<CustomerView> {
+class _CustomerState extends State<Customer> {
   @override
   Widget build(BuildContext context) {
     return const ScaffoldPage(

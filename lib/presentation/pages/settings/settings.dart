@@ -1,21 +1,21 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
+import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 
-class ConfigView extends StatefulWidget {
+class Settings extends StatefulWidget {
   final Function toggleTheme;
   final bool isDarkMode;
 
-  const ConfigView({
+  const Settings({
     super.key,
     required this.toggleTheme,
     required this.isDarkMode,
   });
 
   @override
-  State<ConfigView> createState() => _ConfigViewState();
+  State<Settings> createState() => _SettingsState();
 }
 
-class _ConfigViewState extends State<ConfigView> {
+class _SettingsState extends State<Settings> {
   bool _checked = false;
   double _slider = 0;
 

@@ -1,15 +1,15 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
+import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 
-class RecordView extends StatefulWidget {
-  const RecordView({super.key});
+class SalesHistory extends StatefulWidget {
+  const SalesHistory({super.key});
 
   @override
-  State<RecordView> createState() => _RecordViewState();
+  State<SalesHistory> createState() => _SalesHistoryState();
 }
 
-class _RecordViewState extends State<RecordView> {
+class _SalesHistoryState extends State<SalesHistory> {
   @override
   Widget build(BuildContext context) {
     return const ScaffoldPage(

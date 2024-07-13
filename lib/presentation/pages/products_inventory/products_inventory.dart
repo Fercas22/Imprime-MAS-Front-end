@@ -1,19 +1,19 @@
 import 'dart:math';
 
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
-import 'package:imprime_mas/presentacion/product/content_tab.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_statistics_card.dart';
+import 'package:imprime_mas/presentation/widgets/custom_header.dart';
+import 'package:imprime_mas/presentation/pages/products_inventory/widgets/content_tab.dart';
+import 'package:imprime_mas/presentation/widgets/custom_statistics_card.dart';
 import 'package:imprime_mas/theme/app_theme.dart';
 
-class ProductView extends StatefulWidget {
-  const ProductView({super.key});
+class ProductsInventory extends StatefulWidget {
+  const ProductsInventory({super.key});
 
   @override
-  State<ProductView> createState() => _ProductViewState();
+  State<ProductsInventory> createState() => _ProductsInventoryState();
 }
 
-class _ProductViewState extends State<ProductView> {
+class _ProductsInventoryState extends State<ProductsInventory> {
   int currentIndex = 0;
   List<Tab> tabs = [
     Tab(

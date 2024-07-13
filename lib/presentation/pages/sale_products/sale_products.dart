@@ -1,14 +1,14 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
+import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 
-class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+class SaleProducts extends StatefulWidget {
+  const SaleProducts({super.key});
 
   @override
-  State<Dashboard> createState() => _DashboardState();
+  State<SaleProducts> createState() => _SaleProductsState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _SaleProductsState extends State<SaleProducts> {
   @override
   Widget build(BuildContext context) {
     return const ScaffoldPage(

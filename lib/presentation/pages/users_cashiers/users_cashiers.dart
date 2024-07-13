@@ -1,15 +1,15 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
+import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 
-class UserView extends StatefulWidget {
-  const UserView({super.key});
+class UsersCashiers extends StatefulWidget {
+  const UsersCashiers({super.key});
 
   @override
-  State<UserView> createState() => _UserViewState();
+  State<UsersCashiers> createState() => _UsersCashiersState();
 }
 
-class _UserViewState extends State<UserView> {
+class _UsersCashiersState extends State<UsersCashiers> {
   @override
   Widget build(BuildContext context) {
     return const ScaffoldPage(

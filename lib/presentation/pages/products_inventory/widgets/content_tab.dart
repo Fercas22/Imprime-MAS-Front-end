@@ -1,5 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_filter_type.dart';
+import 'package:imprime_mas/presentation/widgets/custom_filter_type.dart';
 
 class ContentTab extends StatefulWidget {
   const ContentTab({super.key});

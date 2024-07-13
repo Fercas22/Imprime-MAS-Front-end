@@ -1,15 +1,15 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
+import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 
-class SupplierView extends StatefulWidget {
-  const SupplierView({super.key});
+class Suppliers extends StatefulWidget {
+  const Suppliers({super.key});
 
   @override
-  State<SupplierView> createState() => _SupplierViewState();
+  State<Suppliers> createState() => _SuppliersState();
 }
 
-class _SupplierViewState extends State<SupplierView> {
+class _SuppliersState extends State<Suppliers> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,5 +1,5 @@
-import 'package:imprime_mas/presentacion/home/navigation.dart';
-import 'package:imprime_mas/presentacion/login/login.dart';
+import 'package:imprime_mas/router/navigation.dart';
+import 'package:imprime_mas/presentation/pages/auth/login/login.dart';
 import 'package:imprime_mas/theme/app_theme.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:fluent_ui/fluent_ui.dart';
@@ -36,11 +36,11 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Imprime mas',
       theme: isDarkMode ? ThemeClass.darkTheme : ThemeClass.lightTheme,
-      home: const LoginPage(),
-      // home: Navigation(
-      //   toggleTheme: toggleTheme,
-      //   isDarkMode: isDarkMode,
-      // ),
+      // home: const LoginPage(),
+      home: Navigation(
+        toggleTheme: toggleTheme,
+        isDarkMode: isDarkMode,
+      ),
     );
   }
 }

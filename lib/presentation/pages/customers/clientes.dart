@@ -7,7 +7,7 @@ class Clintes extends StatelessWidget {
   Widget build(BuildContext context) {
     return const ScaffoldPage(
       header: PageHeader(
-        title: Text('Clientes'),
+        title: Text('Cerrar sesion'),
       ),
       content: SizedBox(
         height: double.infinity,

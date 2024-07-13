@@ -1,15 +1,15 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:imprime_mas/presentacion/widgets/custom_header.dart';
+import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 
-class ProfileView extends StatefulWidget {
-  const ProfileView({super.key});
+class Profile extends StatefulWidget {
+  const Profile({super.key});
 
   @override
-  State<ProfileView> createState() => _ProfileViewState();
+  State<Profile> createState() => _ProfileState();
 }
 
-class _ProfileViewState extends State<ProfileView> {
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return const ScaffoldPage(
