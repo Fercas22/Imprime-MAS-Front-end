@@ -36,11 +36,11 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Imprime mas',
       theme: isDarkMode ? ThemeClass.darkTheme : ThemeClass.lightTheme,
-      // home: const LoginPage(),
-      home: Navigation(
-        toggleTheme: toggleTheme,
-        isDarkMode: isDarkMode,
-      ),
+      home: const LoginPage(),
+      // home: Navigation(
+      //   toggleTheme: toggleTheme,
+      //   isDarkMode: isDarkMode,
+      // ),
     );
   }
 }
