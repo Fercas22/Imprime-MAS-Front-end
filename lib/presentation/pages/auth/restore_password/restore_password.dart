@@ -1,6 +1,8 @@
+import 'package:imprime_mas/presentation/pages/auth/restore_password/widgets/visual_validator_widget.dart';
 import 'package:imprime_mas/presentation/widgets/custom_footer_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_home_logo.dart';
+import 'package:imprime_mas/domain/value_objects/validator.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
@@ -70,14 +72,43 @@ class RestorePassword extends StatelessWidget {
               fontSize: 18,
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 10),
           const SizedBox(
             height: 45,
             child: TextBox(
               placeholder: 'Ingresa una nueva contraseña',
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 10),
+          const Text(
+            'La contraseña debera de contener las siguientes especificaciones:',
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: 16,
+            ),
+          ),
+          const SizedBox(height: 10),
+          VisualValidatorWidget(
+            text: 'Mínimo 8 caracteres',
+            success: Validator.minLengthValidator('Fer22nando'),
+            enable: false,
+          ),
+          VisualValidatorWidget(
+            text: 'Un número',
+            success: Validator.minNumberValidator('Fernando'),
+            enable: true,
+          ),
+          VisualValidatorWidget(
+            text: 'Una mayúscula',
+            success: Validator.minCapitalLetterValidator('Fer22nando'),
+            enable: true,
+          ),
+          VisualValidatorWidget(
+            text: 'Una minúscula',
+            success: Validator.minLowerCaseValidator('Fer22nando'),
+            enable: false,
+          ),
+          const SizedBox(height: 10),
           const Text(
             'Confirma la contraseña',
             style: TextStyle(
@@ -85,40 +116,11 @@ class RestorePassword extends StatelessWidget {
               fontSize: 18,
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 10),
           const SizedBox(
             height: 45,
             child: TextBox(
               placeholder: 'Repite la contraseña para confirmar',
-            ),
-          ),
-          const SizedBox(height: 40),
-          const Text(
-            'Es importante que la contraseña tenga un mínimo de 8 caracteres y un máximo de 16.',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppColors.white,
-              fontSize: 18,
-            ),
-          ),
-          const SizedBox(height: 20),
-          const Text(
-            'La contraseña deberá tener al menos una letra mayúscula y un número. No se admiten caracteres especiales como: \$#/\\|@%&()![]{}<>?¿',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppColors.white,
-              fontSize: 18,
-            ),
-          ),
-          const SizedBox(height: 20),
-          Container(
-            alignment: Alignment.center,
-            child: const Text(
-              'Si planeas usar algún carácter usa coma o punto.',
-              style: TextStyle(
-                color: AppColors.white,
-                fontSize: 18,
-              ),
             ),
           ),
         ],

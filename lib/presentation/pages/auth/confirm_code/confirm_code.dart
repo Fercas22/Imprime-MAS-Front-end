@@ -71,14 +71,14 @@ class ConfirmCode extends StatelessWidget {
               fontSize: 18,
             ),
           ),
-          SizedBox(height: 12),
+          SizedBox(height: 10),
           SizedBox(
             height: 45,
             child: TextBox(
               placeholder: 'Ingresa el código de verificación',
             ),
           ),
-          SizedBox(height: 40),
+          SizedBox(height: 10),
           Text(
             'Se ha enviado el código de verificación al correo ****n32.gmail.com. No lo compartas con nadie.',
             textAlign: TextAlign.center,
@@ -87,7 +87,7 @@ class ConfirmCode extends StatelessWidget {
               fontSize: 18,
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           Text(
             'El Código de verificación es de un solo uso y tiene 5 minutos hasta que este expire.',
             textAlign: TextAlign.center,
