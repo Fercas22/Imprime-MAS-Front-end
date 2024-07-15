@@ -4,8 +4,8 @@ import 'package:imprime_mas/presentation/widgets/custom_home_logo.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RestorePassword extends StatelessWidget {
+  const RestorePassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,21 +30,17 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CustomHeaderAuth(
-                    title: 'Iniciar sesión',
-                    subtitle:
-                        'Ingresa tus credenciales de acceso para poder iniciar sesión.',
+                    title: 'Recupera tu contraseña',
                   ),
                   _form(),
                   CustomFooterAuth(
-                    buttonTitle: 'Ingresar al sistema',
+                    buttonTitle: 'Confirmar cambio de contraseña',
                     onPressedButton: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed('/saleProducts');
+                      Navigator.of(context).pushReplacementNamed('/');
                     },
-                    textButtonTitle: '¿No recuerdas tu contraseña?',
+                    textButtonTitle: 'Cancelar cambio de contraseña',
                     onPressedTextButton: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed('/confirmCode');
+                      Navigator.of(context).pushReplacementNamed('/');
                     },
                   ),
                 ],
@@ -62,38 +58,67 @@ class LoginPage extends StatelessWidget {
   }
 
   SizedBox _form() {
-    return const SizedBox(
+    return SizedBox(
       width: 467,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Nombre de usuario',
+          const Text(
+            'Nueva contraseña',
             style: TextStyle(
               color: AppColors.white,
               fontSize: 18,
             ),
           ),
-          SizedBox(height: 12),
-          SizedBox(
+          const SizedBox(height: 12),
+          const SizedBox(
             height: 45,
             child: TextBox(
-              placeholder: 'Ingresa tu nombre de usuario',
+              placeholder: 'Ingresa una nueva contraseña',
             ),
           ),
-          SizedBox(height: 40),
-          Text(
-            'Contraseña',
+          const SizedBox(height: 40),
+          const Text(
+            'Confirma la contraseña',
             style: TextStyle(
               color: AppColors.white,
               fontSize: 18,
             ),
           ),
-          SizedBox(height: 12),
-          SizedBox(
+          const SizedBox(height: 12),
+          const SizedBox(
             height: 45,
             child: TextBox(
-              placeholder: 'Ingresa tu contraseña',
+              placeholder: 'Repite la contraseña para confirmar',
+            ),
+          ),
+          const SizedBox(height: 40),
+          const Text(
+            'Es importante que la contraseña tenga un mínimo de 8 caracteres y un máximo de 16.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: 18,
+            ),
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            'La contraseña deberá tener al menos una letra mayúscula y un número. No se admiten caracteres especiales como: \$#/\\|@%&()![]{}<>?¿',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: 18,
+            ),
+          ),
+          const SizedBox(height: 20),
+          Container(
+            alignment: Alignment.center,
+            child: const Text(
+              'Si planeas usar algún carácter usa coma o punto.',
+              style: TextStyle(
+                color: AppColors.white,
+                fontSize: 18,
+              ),
             ),
           ),
         ],

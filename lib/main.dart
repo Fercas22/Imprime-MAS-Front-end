@@ -1,17 +1,14 @@
-import 'package:imprime_mas/router/navigation.dart';
+import 'package:imprime_mas/presentation/pages/auth/restore_password/restore_password.dart';
+import 'package:imprime_mas/presentation/pages/auth/confirm_code/confirm_code.dart';
 import 'package:imprime_mas/presentation/pages/auth/login/login.dart';
-import 'package:imprime_mas/theme/app_theme.dart';
+import 'package:imprime_mas/router/navigation.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:imprime_mas/theme/app_theme.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 void main() async {
   runApp(const MyApp());
   await windowManager.setMinimumSize(const Size(1280, 720));
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await windowManager.ensureInitialized();
-  // windowManager.waitUntilReadyToShow().then((_) async {
-  //   await windowManager.setFullScreen(true);
-  // });
 }
 
 class MyApp extends StatefulWidget {
@@ -34,13 +31,18 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return FluentApp(
       debugShowCheckedModeBanner: false,
-      title: 'Imprime mas',
+      title: 'Imprime más',
       theme: isDarkMode ? ThemeClass.darkTheme : ThemeClass.lightTheme,
-      home: const LoginPage(),
-      // home: Navigation(
-      //   toggleTheme: toggleTheme,
-      //   isDarkMode: isDarkMode,
-      // ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/confirmCode': (context) => const ConfirmCode(),
+        '/restorePassword': (context) => const RestorePassword(),
+        '/saleProducts': (context) => Navigation(
+              toggleTheme: toggleTheme,
+              isDarkMode: isDarkMode,
+            ),
+      },
     );
   }
 }

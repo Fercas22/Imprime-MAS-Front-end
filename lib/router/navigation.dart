@@ -1,15 +1,13 @@
-import 'dart:async';
-
-import 'package:imprime_mas/presentation/pages/settings/settings.dart';
-import 'package:imprime_mas/presentation/pages/customers/customer.dart';
 import 'package:imprime_mas/presentation/pages/products_inventory/products_inventory.dart';
-import 'package:imprime_mas/presentation/pages/profile/profile.dart';
-import 'package:imprime_mas/presentation/pages/sales_history/sales_history.dart';
-import 'package:imprime_mas/presentation/pages/suppliers/suppliers.dart';
 import 'package:imprime_mas/presentation/pages/users_cashiers/users_cashiers.dart';
+import 'package:imprime_mas/presentation/pages/sales_history/sales_history.dart';
 import 'package:imprime_mas/presentation/pages/sale_products/sale_products.dart';
-import 'package:fluent_ui/fluent_ui.dart';
+import 'package:imprime_mas/presentation/pages/suppliers/suppliers.dart';
 import 'package:imprime_mas/presentation/pages/customers/clientes.dart';
+import 'package:imprime_mas/presentation/pages/customers/customer.dart';
+import 'package:imprime_mas/presentation/pages/settings/settings.dart';
+import 'package:imprime_mas/presentation/pages/profile/profile.dart';
+import 'package:fluent_ui/fluent_ui.dart';
 
 class Navigation extends StatefulWidget {
   final Function toggleTheme;
@@ -27,63 +25,18 @@ class Navigation extends StatefulWidget {
 
 class _NavigationState extends State<Navigation> {
   int _currentIndex = 0;
-  late Timer _timer;
-  DateTime dateTime = DateTime.now();
-
-  @override
-  void initState() {
-    super.initState();
-    _timer = Timer.periodic(
-      const Duration(seconds: 1),
-      (timer) {
-        setState(() {
-          dateTime = DateTime.now();
-        });
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return NavigationView(
       pane: NavigationPane(
-        // header: CustomHeader(dateTime: dateTime),
         selected: _currentIndex,
-        // size: const NavigationPaneSize(openWidth: 324),
         onChanged: (value) {
           setState(() {
             _currentIndex = value;
           });
         },
         displayMode: PaneDisplayMode.compact,
-        // items: [
-        //   PaneItem(
-        //     icon: const Icon(
-        //       FluentIcons.home,
-        //       size: 20,
-        //     ),
-        //     title: const Text(
-        //       'Punto de venta',
-        //       // maxLines: 1,
-        //       // overflow: TextOverflow.ellipsis,
-        //       style: TextStyle(
-        //         fontFamily: 'Microsoft Sans Serif',
-        //         fontSize: 16,
-        //         color: Color(0xFFFFFFFF),
-        //       ),
-        //     ),
-        //     body: Dashboard(
-        //       toggleTheme: widget.toggleTheme,
-        //       isDarkMode: widget.isDarkMode,
-        //     ),
-        //   ),
-        // ]
         items: _items,
         footerItems: _footerItems,
       ),
@@ -185,8 +138,6 @@ class _NavigationState extends State<Navigation> {
       ),
     ];
   }
-
-  List<String> itemsBox = ['1', '2', '3'];
 
   List<NavigationPaneItem> get _footerItems {
     return [

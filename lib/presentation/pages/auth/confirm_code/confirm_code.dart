@@ -4,8 +4,8 @@ import 'package:imprime_mas/presentation/widgets/custom_home_logo.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class ConfirmCode extends StatelessWidget {
+  const ConfirmCode({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,21 +30,18 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CustomHeaderAuth(
-                    title: 'Iniciar sesión',
-                    subtitle:
-                        'Ingresa tus credenciales de acceso para poder iniciar sesión.',
+                    title: 'Recupera tu contraseña',
                   ),
                   _form(),
                   CustomFooterAuth(
-                    buttonTitle: 'Ingresar al sistema',
+                    buttonTitle: 'Comprobar código de seguridad',
                     onPressedButton: () {
                       Navigator.of(context)
-                          .pushReplacementNamed('/saleProducts');
+                          .pushReplacementNamed('/restorePassword');
                     },
-                    textButtonTitle: '¿No recuerdas tu contraseña?',
+                    textButtonTitle: 'No me ha llegado el código',
                     onPressedTextButton: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed('/confirmCode');
+                      print('REENVIAR CÓODIGO');
                     },
                   ),
                 ],
@@ -68,7 +65,7 @@ class LoginPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Nombre de usuario',
+            'Código de verificación',
             style: TextStyle(
               color: AppColors.white,
               fontSize: 18,
@@ -78,22 +75,25 @@ class LoginPage extends StatelessWidget {
           SizedBox(
             height: 45,
             child: TextBox(
-              placeholder: 'Ingresa tu nombre de usuario',
+              placeholder: 'Ingresa el código de verificación',
             ),
           ),
           SizedBox(height: 40),
           Text(
-            'Contraseña',
+            'Se ha enviado el código de verificación al correo ****n32.gmail.com. No lo compartas con nadie.',
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.white,
               fontSize: 18,
             ),
           ),
-          SizedBox(height: 12),
-          SizedBox(
-            height: 45,
-            child: TextBox(
-              placeholder: 'Ingresa tu contraseña',
+          SizedBox(height: 20),
+          Text(
+            'El Código de verificación es de un solo uso y tiene 5 minutos hasta que este expire.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: 18,
             ),
           ),
         ],
