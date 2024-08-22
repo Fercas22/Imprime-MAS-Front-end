@@ -1,6 +1,7 @@
 import 'package:imprime_mas/presentation/pages/auth/restore_password/restore_password.dart';
 import 'package:imprime_mas/presentation/pages/auth/confirm_code/confirm_code.dart';
 import 'package:imprime_mas/presentation/pages/auth/login/login.dart';
+import 'package:imprime_mas/router/app_router.dart';
 import 'package:imprime_mas/router/navigation.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:imprime_mas/theme/app_theme.dart';
@@ -12,6 +13,7 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
+  
   const MyApp({super.key});
 
   @override
@@ -29,20 +31,12 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return FluentApp(
+    final appRouter = AppRouter();
+    return FluentApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Imprime más',
       theme: isDarkMode ? ThemeClass.darkTheme : ThemeClass.lightTheme,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const LoginPage(),
-        '/confirmCode': (context) => const ConfirmCode(),
-        '/restorePassword': (context) => const RestorePassword(),
-        '/saleProducts': (context) => Navigation(
-              toggleTheme: toggleTheme,
-              isDarkMode: isDarkMode,
-            ),
-      },
+      routerConfig: appRouter.config(),
     );
   }
 }

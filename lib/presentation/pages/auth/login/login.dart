@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:imprime_mas/presentation/widgets/custom_footer_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_home_logo.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
+@RoutePage()
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 

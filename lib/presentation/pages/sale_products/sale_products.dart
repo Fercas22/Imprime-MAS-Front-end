@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 
+@RoutePage()
 class SaleProducts extends StatefulWidget {
   const SaleProducts({super.key});
 

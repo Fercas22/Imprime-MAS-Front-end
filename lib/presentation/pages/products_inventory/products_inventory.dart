@@ -1,11 +1,13 @@
 import 'dart:math';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header.dart';
 import 'package:imprime_mas/presentation/pages/products_inventory/widgets/content_tab.dart';
 import 'package:imprime_mas/presentation/widgets/custom_statistics_card.dart';
 import 'package:imprime_mas/theme/app_theme.dart';
 
+@RoutePage()
 class ProductsInventory extends StatefulWidget {
   const ProductsInventory({super.key});
 

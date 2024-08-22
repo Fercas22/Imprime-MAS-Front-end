@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:imprime_mas/presentation/pages/auth/restore_password/widgets/visual_validator_widget.dart';
 import 'package:imprime_mas/presentation/widgets/custom_footer_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header_auth.dart';
@@ -6,6 +7,7 @@ import 'package:imprime_mas/domain/value_objects/validator.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
+@RoutePage()
 class RestorePassword extends StatelessWidget {
   const RestorePassword({super.key});
 

@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
+@RoutePage()
 class Clintes extends StatelessWidget {
   const Clintes({super.key});
 
