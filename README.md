@@ -37,6 +37,10 @@ Este proyecto tambien usa fvm para gestionar la version de flutter del proyecto.
 
 ## Configuración del entorno de desarrollo
 
+### Creacion del archivo de variables de entorno
+
+A nivel de la raíz del proyecto encontraras un archivo llamado env.develop, copia ese archivo y pegalo a la misma altura raíz pero renombralo con el siguiente nombre: **.env**
+
 ### Configuracion de FVM (Flutter version management)
 
 1. Dentro del directorio del proyecto abrir una terminal y correr el siguiente comando:
