@@ -1,8 +1,4 @@
-import 'package:imprime_mas/presentation/pages/auth/restore_password/restore_password.dart';
-import 'package:imprime_mas/presentation/pages/auth/confirm_code/confirm_code.dart';
-import 'package:imprime_mas/presentation/pages/auth/login/login.dart';
 import 'package:imprime_mas/router/app_router.dart';
-import 'package:imprime_mas/router/navigation.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:imprime_mas/theme/app_theme.dart';
 import 'package:fluent_ui/fluent_ui.dart';
@@ -13,7 +9,6 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
-  
   const MyApp({super.key});
 
   @override
@@ -29,6 +24,8 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  final appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
     final appRouter = AppRouter();
@@ -36,7 +33,62 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Imprime más',
       theme: isDarkMode ? ThemeClass.darkTheme : ThemeClass.lightTheme,
-      routerConfig: appRouter.config(),
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   final appRouter = AppRouter();
+  //   return FluentApp.router(
+  //     debugShowCheckedModeBanner: false,
+  //     title: 'Imprime más',
+  //     theme: isDarkMode ? ThemeClass.darkTheme : ThemeClass.lightTheme,
+  //     routerConfig: appRouter.config(),
+  //   );
+  // }
 }
+
+// @RoutePage()
+// class MainPage extends StatelessWidget {
+//   const MainPage({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return NavigationView(
+//       pane: NavigationPane(
+//         selected: 0,
+//         onChanged: (index) {
+//           switch (index) {
+//             case 0:
+//               context.router.push(const LoginRoute());
+//               break;
+//             case 1:
+//               context.router.push(const ConfirmCode());
+//               break;
+//             case 2:
+//               context.router.push(const RestorePassword());
+//               break;
+//           }
+//         },
+//         items: [
+//           PaneItem(
+//               icon: const Icon(FluentIcons.home),
+//               title: const Text('Home'),
+//               body: Container()),
+//           PaneItem(
+//               icon: const Icon(FluentIcons.settings),
+//               title: const Text('Settings'),
+//               body: Container()),
+//           PaneItem(
+//               icon: const Icon(FluentIcons.ice),
+//               title: const Text('noc'),
+//               body: Container()),
+//         ],
+//       ),
+      
+//       // content: const AutoRouter(), // AutoRouter gestionará el contenido
+//     );
+//   }
+// }
