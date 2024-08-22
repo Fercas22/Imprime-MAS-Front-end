@@ -45,6 +45,9 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+.vscode/settings.json
+.fvmrc
+.env
 
 # Others
 lib/router/app_router.gr.dart
