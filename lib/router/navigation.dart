@@ -14,13 +14,13 @@ import 'package:imprime_mas/router/app_router.gr.dart';
 
 @RoutePage()
 class Navigation extends StatefulWidget {
-  final Function toggleTheme;
-  final bool isDarkMode;
+  final Function? toggleTheme;
+  final bool? isDarkMode;
 
   const Navigation({
     super.key,
-    required this.toggleTheme,
-    required this.isDarkMode,
+    this.toggleTheme,
+    this.isDarkMode,
   });
 
   @override
@@ -49,6 +49,7 @@ class _NavigationState extends State<Navigation> {
                 title: Text('Home'),
                 body: AutoRouter(),
                 onTap: () {
+                  print('asd');
                   context.router.push(SaleProducts());
                 },
                 
