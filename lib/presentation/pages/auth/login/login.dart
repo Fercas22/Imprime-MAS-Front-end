@@ -1,19 +1,31 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:imprime_mas/presentation/widgets/custom_footer_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header_auth.dart';
-import 'package:imprime_mas/presentation/widgets/custom_home_logo.dart';
+import 'package:imprime_mas/router/app_router.gr.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 @RoutePage()
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool isDarkMode = true;
+
+  void toggleTheme(bool isDark) {
+    setState(() {
+      isDarkMode = isDark;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        const CustomHomeLogo(),
         _rightContainer(context),
       ],
     );
@@ -40,13 +52,14 @@ class LoginPage extends StatelessWidget {
                   CustomFooterAuth(
                     buttonTitle: 'Ingresar al sistema',
                     onPressedButton: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed('/saleProducts');
+                      AutoRouter.of(context).push(Navigation(
+                        isDarkMode: isDarkMode,
+                        toggleTheme: toggleTheme,
+                      ));
                     },
                     textButtonTitle: '¿No recuerdas tu contraseña?',
                     onPressedTextButton: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed('/confirmCode');
+                      AutoRouter.of(context).replaceAll([const ConfirmCode()]);
                     },
                   ),
                 ],

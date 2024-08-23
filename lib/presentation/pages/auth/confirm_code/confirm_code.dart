@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:imprime_mas/presentation/widgets/custom_footer_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header_auth.dart';
-import 'package:imprime_mas/presentation/widgets/custom_home_logo.dart';
+import 'package:imprime_mas/router/app_router.gr.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
@@ -13,7 +13,6 @@ class ConfirmCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        const CustomHomeLogo(),
         _rightContainer(context),
       ],
     );
@@ -38,8 +37,7 @@ class ConfirmCode extends StatelessWidget {
                   CustomFooterAuth(
                     buttonTitle: 'Comprobar código de seguridad',
                     onPressedButton: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed('/restorePassword');
+                      AutoRouter.of(context).replaceAll([const RestorePassword()]);
                     },
                     textButtonTitle: 'No me ha llegado el código',
                     onPressedTextButton: () {

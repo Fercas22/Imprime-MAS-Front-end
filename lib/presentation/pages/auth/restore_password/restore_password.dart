@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:imprime_mas/presentation/pages/auth/restore_password/widgets/visual_validator_widget.dart';
 import 'package:imprime_mas/presentation/widgets/custom_footer_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header_auth.dart';
-import 'package:imprime_mas/presentation/widgets/custom_home_logo.dart';
 import 'package:imprime_mas/domain/value_objects/validator.dart';
+import 'package:imprime_mas/router/app_router.gr.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
@@ -15,7 +15,6 @@ class RestorePassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        const CustomHomeLogo(),
         _rightContainer(context),
       ],
     );
@@ -40,11 +39,11 @@ class RestorePassword extends StatelessWidget {
                   CustomFooterAuth(
                     buttonTitle: 'Confirmar cambio de contraseña',
                     onPressedButton: () {
-                      Navigator.of(context).pushReplacementNamed('/');
+                      AutoRouter.of(context).replaceAll([const LoginRoute()]);
                     },
                     textButtonTitle: 'Cancelar cambio de contraseña',
                     onPressedTextButton: () {
-                      Navigator.of(context).pushReplacementNamed('/');
+                      AutoRouter.of(context).replaceAll([const LoginRoute()]);
                     },
                   ),
                 ],
