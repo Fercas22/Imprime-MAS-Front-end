@@ -3,8 +3,8 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:imprime_mas/presentation/widgets/custom_home_logo.dart';
 
 @RoutePage()
-class Logo extends StatelessWidget {
-  const Logo({super.key});
+class LoginRoutes extends StatelessWidget {
+  const LoginRoutes({super.key});
 
   @override
   Widget build(BuildContext context) {

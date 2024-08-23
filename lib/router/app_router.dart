@@ -6,26 +6,7 @@ import 'app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(
-          page: Logo.page,
-          path: '/logo',
-          initial: true,
-          children: [
-            AutoRoute(
-              page: LoginRoute.page,
-              path: 'login',
-              initial: true,
-            ),
-            AutoRoute(
-              page: ConfirmCode.page,
-              path: 'confirm_code',
-            ),
-            AutoRoute(
-              page: RestorePassword.page,
-              path: 'restore_password',
-            ),
-          ],
-        ),
+        _loginRoutes(),
         AutoRoute(
           page: Clintes.page,
           path: '/cliente',
@@ -47,7 +28,6 @@ class AppRouter extends RootStackRouter {
               path: 'products_inventory',
             ),
             AutoRoute(
-              
               page: SaleProducts.page,
               path: 'sale_products',
               initial: true,
@@ -71,4 +51,27 @@ class AppRouter extends RootStackRouter {
           path: '/users_cashiers',
         ),
       ];
+
+  AutoRoute _loginRoutes() {
+    return AutoRoute(
+      page: LoginRoutes.page,
+      path: '/loginRoutes',
+      initial: true,
+      children: [
+        AutoRoute(
+          page: LoginRoute.page,
+          path: 'login',
+          initial: true,
+        ),
+        AutoRoute(
+          page: ConfirmCodeRoute.page,
+          path: 'confirm-code',
+        ),
+        AutoRoute(
+          page: RestorePasswordRoute.page,
+          path: 'restore-password',
+        ),
+      ],
+    );
+  }
 }

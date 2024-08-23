@@ -1,26 +1,12 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:imprime_mas/presentation/widgets/custom_footer_auth.dart';
 import 'package:imprime_mas/presentation/widgets/custom_header_auth.dart';
 import 'package:imprime_mas/router/app_router.gr.dart';
 import 'package:imprime_mas/theme/app_colors.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
-@RoutePage()
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  bool isDarkMode = true;
-
-  void toggleTheme(bool isDark) {
-    setState(() {
-      isDarkMode = isDark;
-    });
-  }
+class ConfirmCodeWidget extends StatelessWidget {
+  const ConfirmCodeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,22 +30,18 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CustomHeaderAuth(
-                    title: 'Iniciar sesión',
-                    subtitle:
-                        'Ingresa tus credenciales de acceso para poder iniciar sesión.',
+                    title: 'Recupera tu contraseña',
                   ),
                   _form(),
                   CustomFooterAuth(
-                    buttonTitle: 'Ingresar al sistema',
+                    buttonTitle: 'Comprobar código de seguridad',
                     onPressedButton: () {
-                      AutoRouter.of(context).push(Navigation(
-                        isDarkMode: isDarkMode,
-                        toggleTheme: toggleTheme,
-                      ));
+                      AutoRouter.of(context)
+                          .replaceAll([const RestorePasswordRoute()]);
                     },
-                    textButtonTitle: '¿No recuerdas tu contraseña?',
+                    textButtonTitle: 'No me ha llegado el código',
                     onPressedTextButton: () {
-                      AutoRouter.of(context).replaceAll([const ConfirmCode()]);
+                      print('REENVIAR CÓODIGO');
                     },
                   ),
                 ],
@@ -83,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Nombre de usuario',
+            'Código de verificación',
             style: TextStyle(
               color: AppColors.white,
               fontSize: 18,
@@ -93,22 +75,25 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(
             height: 45,
             child: TextBox(
-              placeholder: 'Ingresa tu nombre de usuario',
+              placeholder: 'Ingresa el código de verificación',
             ),
           ),
           SizedBox(height: 10),
           Text(
-            'Contraseña',
+            'Se ha enviado el código de verificación al correo ****n32.gmail.com. No lo compartas con nadie.',
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.white,
               fontSize: 18,
             ),
           ),
           SizedBox(height: 10),
-          SizedBox(
-            height: 45,
-            child: TextBox(
-              placeholder: 'Ingresa tu contraseña',
+          Text(
+            'El Código de verificación es de un solo uso y tiene 5 minutos hasta que este expire.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: 18,
             ),
           ),
         ],
