@@ -23,11 +23,15 @@ class AppRouter extends RootStackRouter {
           page: Navigation.page,
           path: '/Navigation',
           children: [
-            AutoRoute(
+            CustomRoute(
+              transitionsBuilder: TransitionsBuilders.noTransition,
+              durationInMilliseconds: 0,
               page: ProductsInventory.page,
               path: 'products_inventory',
             ),
-            AutoRoute(
+            CustomRoute(
+              transitionsBuilder: TransitionsBuilders.noTransition,
+              durationInMilliseconds: 0,
               page: SaleProducts.page,
               path: 'sale_products',
               initial: true,
