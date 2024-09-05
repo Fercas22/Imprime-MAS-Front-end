@@ -9,11 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:imprime_mas/main.dart';
+import 'package:imprime_mas/router/app_router.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    final appRouter = AppRouter();
+    await tester.pumpWidget(
+      MyApp(appRouter: appRouter),
+    );
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

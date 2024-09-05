@@ -35,46 +35,46 @@ class LoginWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CustomHeaderAuth(
-                    title: 'Iniciar sesión',
+                    title: 'Iniciar sesisdsón',
                     subtitle:
                         'Ingresa tus credenciales de acceso para poder iniciar sesión.',
                   ),
                   _form(viewModel),
-                  viewModel.isLoading
-                      ? const mat.CircularProgressIndicator()
-                      : mat.ElevatedButton(
-                          onPressed: () {
-                            viewModel.login();
-                          },
-                          child: const Text('Iniciar sesion'),
-                        ),
-                  if (viewModel.errorMessage != null) ...[
-                    const SizedBox(height: 16),
-                    Text(
-                      viewModel.errorMessage!,
-                      style: TextStyle(color: Colors.red),
-                    ),
-                  ],
-                  if (viewModel.user != null) ...[
-                    const SizedBox(height: 16),
-                    Text('Login exitoso: ${viewModel.user!.token}'),
-                    // Text('data')
-                  ],
-                  // CustomFooterAuth(
-                  //   buttonTitle: 'Ingresar al sistema',
-                  //   onPressedButton: () {
-                  //     AutoRouter.of(context).push(Navigation(
-                  //         // isDarkMode: isDarkMode,
-                  //         // toggleTheme: toggleTheme,
-                  //         ));
-                  //   },
-                  //   textButtonTitle: '¿No recuerdas tu contraseña?',
-                  //   onPressedTextButton: () {
-                  //     AutoRouter.of(context).replaceAll(
-                  //       [const ConfirmCodeRoute()],
-                  //     );
-                  //   },
-                  // ),
+                  // viewModel.isLoading
+                  //     ? const mat.CircularProgressIndicator()
+                  //     : mat.ElevatedButton(
+                  //         onPressed: () {
+                  //           viewModel.login();
+                  //         },
+                  //         child: const Text('Iniciar sesion'),
+                  //       ),
+                  // if (viewModel.errorMessage != null) ...[
+                  //   const SizedBox(height: 16),
+                  //   Text(
+                  //     viewModel.errorMessage!,
+                  //     style: TextStyle(color: Colors.red),
+                  //   ),
+                  // ],
+                  // if (viewModel.user != null) ...[
+                  //   const SizedBox(height: 16),
+                  //   Text('Login exitoso: ${viewModel.user!.token}'),
+                  //   // Text('data')
+                  // ],
+                  CustomFooterAuth(
+                    buttonTitle: 'Ingresar al sistema',
+                    onPressedButton: () {
+                      AutoRouter.of(context).push(Navigation(
+                          // isDarkMode: isDarkMode,
+                          // toggleTheme: toggleTheme,
+                          ));
+                    },
+                    textButtonTitle: '¿No recuerdas tu contraseña?',
+                    onPressedTextButton: () {
+                      AutoRouter.of(context).replaceAll(
+                        [const ConfirmCodeRoute()],
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
@@ -96,7 +96,7 @@ class LoginWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Nombre de usuario',
+            'Nombre de usuario prueba',
             style: TextStyle(
               color: AppColors.white,
               fontSize: 18,
