@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:imprime_mas/views/widgets/custom_filter_type.dart';
 
@@ -207,7 +209,9 @@ class _ContentTabState extends State<ContentTab> {
   Widget _buildTableCell(String label) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Text(label, ),
+      child: Text(
+        label,
+      ),
     );
   }
 
@@ -288,14 +292,13 @@ class _ContentTabState extends State<ContentTab> {
       height: 35,
       child: Button(
         child: const Text('Nuevo producto'),
-        onPressed: () {
-          print('Nuevo producto');
-        },
+        onPressed: () {},
       ),
     );
   }
 
   Widget _advancedFilterWidget() {
+    log('message');
     return Padding(
       padding: const EdgeInsets.only(top: 10, bottom: 15),
       child: Row(
@@ -305,11 +308,11 @@ class _ContentTabState extends State<ContentTab> {
             title: 'Filtrar por precios',
             placeHolderOne: 'Precio mínimo',
             onChangedOne: (value) {
-              print('Precio mínimo $value');
+              log('Precio mínimo $value');
             },
             placeHolderTwo: 'Precio máximo',
             onChangedTwo: (value) {
-              print('Precio máximo $value');
+              log('Precio máximo $value');
             },
           ),
           const SizedBox(width: 25),
@@ -317,11 +320,11 @@ class _ContentTabState extends State<ContentTab> {
             title: 'Filtrar por precios de proveedor',
             placeHolderOne: 'Precio mínimo',
             onChangedOne: (value) {
-              print('Precio mínimo $value');
+              log('Precio mínimo $value');
             },
             placeHolderTwo: 'Precio máximo',
             onChangedTwo: (value) {
-              print('Precio máximo $value');
+              log('Precio máximo $value');
             },
           ),
           const SizedBox(width: 25),
@@ -329,11 +332,11 @@ class _ContentTabState extends State<ContentTab> {
             title: 'Filtrar por stock',
             placeHolderOne: 'Stock mínimo',
             onChangedOne: (value) {
-              print('Stock mínimo $value');
+              log('Stock mínimo $value');
             },
             placeHolderTwo: 'Stock máximo',
             onChangedTwo: (value) {
-              print('Stock máximo $value');
+              log('Stock máximo $value');
             },
           ),
         ],
@@ -347,7 +350,7 @@ class _ContentTabState extends State<ContentTab> {
       child: Button(
         child: const Text('Exportar en Excel'),
         onPressed: () {
-          print('Exportar tabla');
+          log('Exportar tabla');
         },
       ),
     );

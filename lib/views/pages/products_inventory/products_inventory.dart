@@ -23,7 +23,7 @@ class _ProductsInventoryState extends State<ProductsInventory> {
         FluentIcons.product_release,
         size: 20,
       ),
-      text: Text(
+      text: const Text(
         'Productos',
         // style: ThemeClass.lightTheme.typography.body,
       ),
@@ -34,7 +34,7 @@ class _ProductsInventoryState extends State<ProductsInventory> {
         FluentIcons.page_arrow_right,
         size: 20,
       ),
-      text: Text(
+      text: const Text(
         'Movimientos',
         // style: ThemeClass.lightTheme.typography.body,
       ),
@@ -50,38 +50,35 @@ class _ProductsInventoryState extends State<ProductsInventory> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: const Color(0xFF242424),
-      child: ScaffoldPage(
-        header: const CustomHeader(
-          title: 'Productos e Inventario',
+    return ScaffoldPage(
+      header: const CustomHeader(
+        title: 'Productos e Inventario',
+      ),
+      content: Padding(
+        padding: const EdgeInsets.only(
+          left: 25,
+          right: 25,
+          bottom: 15,
         ),
-        content: Padding(
-          padding: const EdgeInsets.only(
-            left: 25,
-            right: 25,
-            bottom: 15,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _infoCard(),
-              const SizedBox(height: 15),
-              Expanded(
-                child: SizedBox(
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: TabView(
-                    tabs: tabs,
-                    currentIndex: currentIndex,
-                    onChanged: (index) => setState(() => currentIndex = index),
-                    tabWidthBehavior: TabWidthBehavior.sizeToContent,
-                    closeButtonVisibility: CloseButtonVisibilityMode.never,
-                  ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _infoCard(),
+            const SizedBox(height: 15),
+            Expanded(
+              child: SizedBox(
+                width: double.infinity,
+                height: double.infinity,
+                child: TabView(
+                  tabs: tabs,
+                  currentIndex: currentIndex,
+                  onChanged: (index) => setState(() => currentIndex = index),
+                  tabWidthBehavior: TabWidthBehavior.sizeToContent,
+                  closeButtonVisibility: CloseButtonVisibilityMode.never,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

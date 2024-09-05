@@ -13,36 +13,187 @@ class Customer extends StatefulWidget {
 class _CustomerState extends State<Customer> {
   @override
   Widget build(BuildContext context) {
-    return const ScaffoldPage(
-      header: CustomHeader(title: 'Clientes'),
-      content: Center(
-        child: Text('Contenido de clientes'),
+    return ScaffoldPage(
+      header: const CustomHeader(title: 'Clientes'),
+      content: Container(
+        padding: const EdgeInsets.all(16),
+        child: _buildTable(),
       ),
-      // content: SizedBox(
-      //   height: double.infinity,
-      //   width: double.infinity,
-      //   child: Center(
-      //     child: Table(
-      //       border: TableBorder.all(),
-      //       children: const [
-      //         TableRow(
-      //           children: [
-      //             TableCell(child: Center(child: Text('Celda 1'))),
-      //             TableCell(child: Center(child: Text('Celda 2'))),
-      //             TableCell(child: Center(child: Text('Celda 3'))),
-      //           ],
-      //         ),
-      //         TableRow(
-      //           children: [
-      //             TableCell(child: Center(child: Text('Celda 4'))),
-      //             TableCell(child: Center(child: Text('Celda 5'))),
-      //             TableCell(child: Center(child: Text('Celda 6'))),
-      //           ],
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
+    );
+  }
+
+  Widget _buildTable() {
+    return Expanded(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Table(
+          columnWidths: const {
+            0: FlexColumnWidth(3),
+            1: FlexColumnWidth(3),
+            2: FlexColumnWidth(3),
+            3: FlexColumnWidth(3),
+            4: FlexColumnWidth(3),
+            5: FlexColumnWidth(3),
+            6: FlexColumnWidth(3),
+          },
+          border: TableBorder.all(color: Colors.grey),
+          children: [
+            TableRow(
+              children: [
+                _buildTableCell('Producto'),
+                _buildTableCell('SKU'),
+                _buildTableCell('Precio unitario'),
+                _buildTableCell('Descuento'),
+                _buildTableCell('Stock'),
+                _buildTableCell('Subtotal Neto'),
+                _buildTableCell('Acciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            TableRow(
+              children: [
+                _buildTableCell('Nombre del producto'),
+                _buildTableCell('4323123SYS21'),
+                _buildTableCell('\$ 45.00'),
+                _buildTableCell('\$ 00.00'),
+                _buildTableCell('43 pzs'),
+                _buildTableCell('\$ 5542.00'),
+                _buildTableCell('Opciones'),
+              ],
+            ),
+            // Añade más filas según sea necesario
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTableCell(String label) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        label,
+      ),
     );
   }
 }

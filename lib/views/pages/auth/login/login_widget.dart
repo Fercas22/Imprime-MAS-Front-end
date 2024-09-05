@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart' as mat;
-import 'package:flutter/widgets.dart';
 import 'package:imprime_mas/viewmodels/login_view_model.dart';
 import 'package:imprime_mas/views/widgets/custom_footer_auth.dart';
 import 'package:imprime_mas/views/widgets/custom_header_auth.dart';
@@ -64,7 +62,7 @@ class LoginWidget extends StatelessWidget {
                     buttonTitle: 'Ingresar al sistema',
                     onPressedButton: () {
                       AutoRouter.of(context).push(
-                        Navigation(),
+                        const Navigation(),
                       );
                     },
                     textButtonTitle: '¿No recuerdas tu contraseña?',

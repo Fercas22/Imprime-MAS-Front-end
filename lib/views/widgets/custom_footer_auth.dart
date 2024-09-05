@@ -36,7 +36,7 @@ class CustomFooterAuth extends StatelessWidget {
       width: double.infinity,
       child: fluent.Button(
         style: fluent.ButtonStyle(
-          backgroundColor: fluent.ButtonState.all(
+          backgroundColor: fluent.WidgetStateProperty.all(
             AppColors.green,
           ),
         ),
@@ -61,8 +61,8 @@ class CustomFooterAuth extends StatelessWidget {
   TextButton _textButton() {
     return TextButton(
       style: ButtonStyle(
-        overlayColor: MaterialStateProperty.resolveWith<Color?>((states) {
-          if (states.contains(MaterialState.hovered)) {
+        overlayColor: WidgetStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(WidgetState.hovered)) {
             return Colors.transparent;
           }
           return null;

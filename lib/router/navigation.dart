@@ -1,17 +1,8 @@
-import 'package:auto_route/auto_route.dart';
-// import 'package:imprime_mas/presentation/pages/products_inventory/products_inventory.dart';
-// import 'package:imprime_mas/views/pages/users_cashiers/users_cashiers.dart';
-// import 'package:imprime_mas/views/pages/sales_history/sales_history.dart';
-// import 'package:imprime_mas/presentation/pages/sale_products/sale_products.dart';
-// import 'package:imprime_mas/views/pages/suppliers/suppliers.dart';
-// import 'package:imprime_mas/views/pages/customers/clientes.dart';
-// import 'package:imprime_mas/views/pages/customers/customer.dart';
-// import 'package:imprime_mas/views/pages/settings/settings.dart';
-// import 'package:imprime_mas/views/pages/profile/profile.dart';
-import 'package:fluent_ui/fluent_ui.dart';
-import 'package:imprime_mas/router/app_router.dart';
 import 'package:imprime_mas/router/app_router.gr.dart';
+import 'package:imprime_mas/router/app_router.dart';
 import 'package:imprime_mas/theme/app_theme.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:fluent_ui/fluent_ui.dart';
 
 @RoutePage()
 class Navigation extends StatefulWidget {

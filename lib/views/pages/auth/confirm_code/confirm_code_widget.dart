@@ -40,9 +40,7 @@ class ConfirmCodeWidget extends StatelessWidget {
                           .replaceAll([const RestorePasswordRoute()]);
                     },
                     textButtonTitle: 'No me ha llegado el código',
-                    onPressedTextButton: () {
-                      print('REENVIAR CÓODIGO');
-                    },
+                    onPressedTextButton: () {},
                   ),
                 ],
               ),
