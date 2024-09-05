@@ -11,16 +11,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:imprime_mas/router/app_router.dart';
 import 'package:imprime_mas/router/app_router.gr.dart';
+import 'package:imprime_mas/theme/app_theme.dart';
 
 @RoutePage()
 class Navigation extends StatefulWidget {
-  final Function? toggleTheme;
-  final bool? isDarkMode;
-
   const Navigation({
     super.key,
-    this.toggleTheme,
-    this.isDarkMode,
   });
 
   @override
@@ -34,6 +30,7 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return FluentApp.router(
+      theme: ThemeClass.darkTheme,
       routerDelegate: appRouter.delegate(),
       routeInformationParser: appRouter.defaultRouteParser(),
       builder: (context, router) {
@@ -52,7 +49,6 @@ class _NavigationState extends State<Navigation> {
                   print('asd');
                   context.router.push(SaleProducts());
                 },
-                
               ),
               PaneItem(
                 icon: Icon(FluentIcons.settings),
@@ -61,7 +57,6 @@ class _NavigationState extends State<Navigation> {
                 onTap: () {
                   context.router.push(ProductsInventory());
                 },
-               
               ),
             ],
           ),

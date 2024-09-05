@@ -26,8 +26,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  /// Controla el tema de la aplicacion
   bool isDarkMode = true;
 
+  /// Implementacion para cambiar el tema de la app
+  /// se debe de pasar como parametro hasta la vista que controlara
   void toggleTheme(bool isDark) {
     setState(() {
       isDarkMode = isDark;

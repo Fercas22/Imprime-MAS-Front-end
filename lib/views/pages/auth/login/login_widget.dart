@@ -63,10 +63,9 @@ class LoginWidget extends StatelessWidget {
                   CustomFooterAuth(
                     buttonTitle: 'Ingresar al sistema',
                     onPressedButton: () {
-                      AutoRouter.of(context).push(Navigation(
-                          // isDarkMode: isDarkMode,
-                          // toggleTheme: toggleTheme,
-                          ));
+                      AutoRouter.of(context).push(
+                        Navigation(),
+                      );
                     },
                     textButtonTitle: '¿No recuerdas tu contraseña?',
                     onPressedTextButton: () {
