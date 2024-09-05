@@ -4,13 +4,8 @@ import 'package:imprime_mas/views/widgets/custom_header.dart';
 
 @RoutePage()
 class Settings extends StatefulWidget {
-  final Function toggleTheme;
-  final bool isDarkMode;
-
   const Settings({
     super.key,
-    required this.toggleTheme,
-    required this.isDarkMode,
   });
 
   @override
@@ -43,9 +38,9 @@ class _SettingsState extends State<Settings> {
             const SizedBox(height: 15),
             ToggleSwitch(
               content: const Text('Cambiar tema'),
-              checked: widget.isDarkMode,
+              checked: true,
               onChanged: (value) {
-                widget.toggleTheme(value);
+                // widget.toggleTheme(value);
               },
             ),
             const SizedBox(height: 15),

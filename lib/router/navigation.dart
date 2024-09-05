@@ -24,7 +24,6 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
-  // int _currentIndex = 0;
   final appRouter = AppRouter();
 
   @override
@@ -35,182 +34,186 @@ class _NavigationState extends State<Navigation> {
       routeInformationParser: appRouter.defaultRouteParser(),
       builder: (context, router) {
         return NavigationView(
-          // appBar: NavigationAppBar(
-          //   title: Text('adsadasdasd'),
-          // ),
           pane: NavigationPane(
             displayMode: PaneDisplayMode.compact,
-            items: [
-              PaneItem(
-                icon: Icon(FluentIcons.home),
-                title: Text('Home'),
-                body: AutoRouter(),
-                onTap: () {
-                  print('asd');
-                  context.router.push(SaleProducts());
-                },
-              ),
-              PaneItem(
-                icon: Icon(FluentIcons.settings),
-                title: Text('Settings'),
-                body: AutoRouter(),
-                onTap: () {
-                  context.router.push(ProductsInventory());
-                },
-              ),
-            ],
+            items: _items(context),
+            footerItems: _footerItems(context),
           ),
         );
       },
     );
   }
 
-  // List<NavigationPaneItem> get _items {
-  //   return [
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.home,
-  //         size: 20,
-  //       ),
-  //       title: const Text(
-  //         'Punto de venta',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: const SaleProducts(),
-  //     ),
-  //     PaneItemSeparator(),
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.product_release,
-  //         size: 22,
-  //       ),
-  //       title: const Text(
-  //         'Productos e inventario',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: const ProductsInventory(),
-  //     ),
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.group,
-  //         size: 22,
-  //       ),
-  //       title: const Text(
-  //         'Clientes',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: const Customer(),
-  //     ),
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.delivery_truck,
-  //         size: 22,
-  //       ),
-  //       title: const Text(
-  //         'Proveedores',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: const Suppliers(),
-  //     ),
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.account_management,
-  //         size: 22,
-  //       ),
-  //       title: const Text(
-  //         'Usuarios y cajeros',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: const UsersCashiers(),
-  //     ),
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.history,
-  //         size: 22,
-  //       ),
-  //       title: const Text(
-  //         'Historial de ventas',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: const SalesHistory(),
-  //     ),
-  //   ];
-  // }
+  List<NavigationPaneItem> _items(BuildContext context) {
+    return [
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.home,
+          size: 18,
+        ),
+        title: const Text(
+          'Punto de venta',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const SaleProducts());
+        },
+      ),
+      PaneItemSeparator(),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.product_release,
+          size: 18,
+        ),
+        title: const Text(
+          'Productos e inventario',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const ProductsInventory());
+        },
+      ),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.group,
+          size: 18,
+        ),
+        title: const Text(
+          'Clientes',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const Customer());
+        },
+      ),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.delivery_truck,
+          size: 18,
+        ),
+        title: const Text(
+          'Proveedores',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const Suppliers());
+        },
+      ),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.account_management,
+          size: 18,
+        ),
+        title: const Text(
+          'Usuarios y cajeros',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const UsersCashiers());
+        },
+      ),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.history,
+          size: 18,
+        ),
+        title: const Text(
+          'Historial de ventas',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const SalesHistory());
+        },
+      ),
+    ];
+  }
 
-  // List<NavigationPaneItem> get _footerItems {
-  //   return [
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.fabric_user_folder,
-  //         size: 22,
-  //       ),
-  //       title: const Text(
-  //         'Perfil de usuario',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: const Profile(),
-  //     ),
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.settings,
-  //         size: 22,
-  //       ),
-  //       title: const Text(
-  //         'Configuracion',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: Settings(
-  //         toggleTheme: widget.toggleTheme,
-  //         isDarkMode: widget.isDarkMode,
-  //       ),
-  //     ),
-  //     PaneItem(
-  //       icon: const Icon(
-  //         FluentIcons.sign_out,
-  //         size: 22,
-  //       ),
-  //       title: const Text(
-  //         'Cerrar sesión',
-  //         style: TextStyle(
-  //           fontFamily: 'Microsoft Sans Serif',
-  //           fontSize: 16,
-  //           color: Color(0xFFFFFFFF),
-  //         ),
-  //       ),
-  //       body: const Clintes(),
-  //     ),
-  //   ];
-  // }
+  List<NavigationPaneItem> _footerItems(BuildContext context) {
+    return [
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.fabric_user_folder,
+          size: 18,
+        ),
+        title: const Text(
+          'Perfil de usuario',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const Profile());
+        },
+      ),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.settings,
+          size: 18,
+        ),
+        title: const Text(
+          'Configuracion',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const Settings());
+        },
+      ),
+      PaneItem(
+        icon: const Icon(
+          FluentIcons.sign_out,
+          size: 18,
+        ),
+        title: const Text(
+          'Cerrar sesión',
+          style: TextStyle(
+            fontFamily: 'Microsoft Sans Serif',
+            fontSize: 16,
+            color: Color(0xFFFFFFFF),
+          ),
+        ),
+        body: const AutoRouter(),
+        onTap: () {
+          context.router.push(const Clintes());
+        },
+      ),
+    ];
+  }
 }
