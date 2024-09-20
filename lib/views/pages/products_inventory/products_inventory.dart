@@ -54,31 +54,34 @@ class _ProductsInventoryState extends State<ProductsInventory> {
       header: const CustomHeader(
         title: 'Productos e Inventario',
       ),
-      content: Padding(
-        padding: const EdgeInsets.only(
-          left: 25,
-          right: 25,
-          bottom: 15,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _infoCard(),
-            const SizedBox(height: 15),
-            Expanded(
-              child: SizedBox(
-                width: double.infinity,
-                height: double.infinity,
-                child: TabView(
-                  tabs: tabs,
-                  currentIndex: currentIndex,
-                  onChanged: (index) => setState(() => currentIndex = index),
-                  tabWidthBehavior: TabWidthBehavior.sizeToContent,
-                  closeButtonVisibility: CloseButtonVisibilityMode.never,
+      content: Container(
+        color: const Color(0xFF242424),
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 25,
+            right: 25,
+            bottom: 15,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _infoCard(),
+              const SizedBox(height: 15),
+              Expanded(
+                child: SizedBox(
+                  width: double.infinity,
+                  height: double.infinity,
+                  child: TabView(
+                    tabs: tabs,
+                    currentIndex: currentIndex,
+                    onChanged: (index) => setState(() => currentIndex = index),
+                    tabWidthBehavior: TabWidthBehavior.sizeToContent,
+                    closeButtonVisibility: CloseButtonVisibilityMode.never,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -86,6 +89,7 @@ class _ProductsInventoryState extends State<ProductsInventory> {
 
   Row _infoCard() {
     return const Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         CustomStatisticsCard(
           title: 'Categoría de productos',

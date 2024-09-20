@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:imprime_mas/views/widgets/custom_filter_type.dart';
+import 'package:flutter/material.dart' as mat;
 
 class ContentTab extends StatefulWidget {
   const ContentTab({super.key});
@@ -18,6 +19,27 @@ class _ContentTabState extends State<ContentTab> {
     'Block de hojas',
     'Lapiceros',
     'Impresiones'
+  ];
+  final List<Map<String, dynamic>> data = [
+    {
+      "Producto": "Producto 1",
+      "Grupo": "Grupo A",
+      "SKU": "SKU12345",
+      "Precio unitario": 100.0,
+      "Descuento": 10.0,
+      "Stock": 50,
+      "Subtotal Neto": 4500.0,
+    },
+    {
+      "Producto": "Producto 2",
+      "Grupo": "Grupo B",
+      "SKU": "SKU67890",
+      "Precio unitario": 200.0,
+      "Descuento": 20.0,
+      "Stock": 30,
+      "Subtotal Neto": 4800.0,
+    },
+    // Agrega más datos aquí
   ];
   bool _checked = false;
 
@@ -41,168 +63,279 @@ class _ContentTabState extends State<ContentTab> {
   }
 
   Widget _buildTable() {
+    final w = MediaQuery.of(context).size;
     return Expanded(
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Table(
-          columnWidths: const {
-            0: FlexColumnWidth(3),
-            1: FlexColumnWidth(3),
-            2: FlexColumnWidth(3),
-            3: FlexColumnWidth(3),
-            4: FlexColumnWidth(3),
-            5: FlexColumnWidth(3),
-            6: FlexColumnWidth(3),
-          },
-          border: TableBorder.all(color: Colors.grey),
-          children: [
-            TableRow(
-              children: [
-                _buildTableCell('Producto'),
-                _buildTableCell('SKU'),
-                _buildTableCell('Precio unitario'),
-                _buildTableCell('Descuento'),
-                _buildTableCell('Stock'),
-                _buildTableCell('Subtotal Neto'),
-                _buildTableCell('Acciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            TableRow(
-              children: [
-                _buildTableCell('Nombre del producto'),
-                _buildTableCell('4323123SYS21'),
-                _buildTableCell('\$ 45.00'),
-                _buildTableCell('\$ 00.00'),
-                _buildTableCell('43 pzs'),
-                _buildTableCell('\$ 5542.00'),
-                _buildTableCell('Opciones'),
-              ],
-            ),
-            // Añade más filas según sea necesario
-          ],
+        child: Container(
+          width: w.width,
+          color: Colors.blue,
+          child: mat.DataTable(
+            columns: <mat.DataColumn>[
+              mat.DataColumn(
+                label: _buildTableCell('Producto'),
+              ),
+              mat.DataColumn(
+                label: _buildTableCell('Grupo'),
+              ),
+              mat.DataColumn(
+                label: _buildTableCell('SKU'),
+              ),
+              mat.DataColumn(
+                label: _buildTableCell('Precio unitario'),
+              ),
+              mat.DataColumn(
+                label: _buildTableCell('Descuento'),
+              ),
+              mat.DataColumn(
+                label: _buildTableCell('Stock'),
+              ),
+              mat.DataColumn(
+                label: _buildTableCell('Subtotal Neto'),
+              ),
+              mat.DataColumn(
+                label: _buildTableCell('Acciones'),
+              ),
+            ],
+            rows: data.map((producto) {
+              return mat.DataRow(
+                cells: <mat.DataCell>[
+                  mat.DataCell(Text(producto['Producto'])),
+                  mat.DataCell(Text(producto['Grupo'])),
+                  mat.DataCell(Text(producto['SKU'])),
+                  mat.DataCell(Text(
+                      '\$${producto['Precio unitario'].toStringAsFixed(2)}')),
+                  mat.DataCell(Text('${producto['Descuento']}%')),
+                  mat.DataCell(Text('${producto['Stock']}')),
+                  mat.DataCell(Text(
+                      '\$${producto['Subtotal Neto'].toStringAsFixed(2)}')),
+                  mat.DataCell(
+                    Center(
+                      child: mat.PopupMenuButton<String>(
+                          onSelected: (value) {
+                            print('Opción seleccionada: $value');
+                          },
+                          itemBuilder: (BuildContext context) {
+                            return const [
+                              mat.PopupMenuItem(
+                                value: 'detalles',
+                                child: ListTile(
+                                  leading: Icon(mat.Icons.info),
+                                  title: Text('Ver detalles'),
+                                ),
+                              ),
+                              mat.PopupMenuItem(
+                                value: 'editar',
+                                child: ListTile(
+                                  leading: Icon(mat.Icons.edit),
+                                  title: Text('Editar'),
+                                ),
+                              ),
+                              mat.PopupMenuItem(
+                                value: 'pausar',
+                                child: ListTile(
+                                  leading: Icon(mat.Icons.pause),
+                                  title: Text('Pausar'),
+                                ),
+                              ),
+                              mat.PopupMenuItem(
+                                value: 'eliminar',
+                                child: ListTile(
+                                  leading: Icon(mat.Icons.delete),
+                                  title: Text('Eliminar'),
+                                ),
+                              ),
+                            ];
+                          },
+                          child: Container(
+                            color: Colors.grey,
+                            width: w.width * 0.07,
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(mat.Icons.settings),
+                                Text('Opciones'),
+                                Icon(mat.Icons.keyboard_arrow_down),
+                              ],
+                            ),
+                          )),
+                    ),
+                  )
+                ],
+              );
+            }).toList(),
+          ),
         ),
       ),
+
+      // child: SingleChildScrollView(
+      //   scrollDirection: Axis.vertical,
+      //   child: Table(
+      //     columnWidths: const {
+      //       0: FlexColumnWidth(3),
+      //       1: FlexColumnWidth(3),
+      //       2: FlexColumnWidth(3),
+      //       3: FlexColumnWidth(3),
+      //       4: FlexColumnWidth(3),
+      //       5: FlexColumnWidth(3),
+      //       6: FlexColumnWidth(3),
+      //       7: FlexColumnWidth(3),
+      //     },
+      //     // border: TableBorder.all(color: Colors.white ),
+      //     border: const TableBorder(
+      //       horizontalInside: BorderSide(color: Colors.white),
+      //     ),
+      //     children: [
+      //       TableRow(
+      //         children: [
+      //           _buildTableCell('Producto'),
+      //           _buildTableCell('Grupo'),
+      //           _buildTableCell('SKU'),
+      //           _buildTableCell('Precio unitario'),
+      //           _buildTableCell('Descuento'),
+      //           _buildTableCell('Stock'),
+      //           _buildTableCell('Subtotal Neto'),
+      //           _buildTableCell('Acciones'),
+      //         ],
+      //       ),
+
+      //       TableRow(
+      //         children: [
+      //           _buildTableCell('Nombre del producto'),
+      //           _buildTableCell('P'),
+      //           _buildTableCell('4323123SYS21'),
+      //           _buildTableCell('\$ 45.00'),
+      //           _buildTableCell('\$ 00.00'),
+      //           _buildTableCell('43 pzs'),
+      //           _buildTableCell('\$ 5542.00'),
+      //           _buildTableCell('Opciones'),
+      //         ],
+      //       ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // TableRow(
+      //       //   children: [
+      //       //     _buildTableCell('Nombre del producto'),
+      //       //     _buildTableCell('4323123SYS21'),
+      //       //     _buildTableCell('\$ 45.00'),
+      //       //     _buildTableCell('\$ 00.00'),
+      //       //     _buildTableCell('43 pzs'),
+      //       //     _buildTableCell('\$ 5542.00'),
+      //       //     _buildTableCell('Opciones'),
+      //       //   ],
+      //       // ),
+      //       // Añade más filas según sea necesario
+      //     ],
+      //   ),
+      // ),
     );
   }
 

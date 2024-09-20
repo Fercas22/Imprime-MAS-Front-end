@@ -38,9 +38,12 @@ class _CustomHeaderState extends State<CustomHeader> {
 
   @override
   Widget build(BuildContext context) {
-    return PageHeader(
-      title: _titleText(),
-      commandBar: _clock(),
+    return Container(
+      color: const Color(0xFF242424),
+      child: PageHeader(
+        title: _titleText(),
+        commandBar: _clock(),
+      ),
     );
   }
 
